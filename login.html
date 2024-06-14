@@ -6,6 +6,10 @@
     <title>LPS Prime Contabilidade e Certificadora</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -29,22 +33,49 @@
             &#9776;
         </button>
     </header>
-    <section>
+    <section class="form-container">
         <form name='form1' class='formlogin' id='form1' action='https://app.contadoronline.contmatic.com.br/efetualoginnovo' method='post'>
-            <div class='areaCliente'>Área de clientes</div>
-                <label>CNPJ/CPF/CAEPF/CEI:</label>
-                <input type='text' name='documento' id='contmatic_documento' style='width: 150px;'> <br>
-                <label>Usuário:</label>
-                <input type='text' name='login' id='login' size='10' maxlength='91'> <br>
-                <label>Senha:</label>
-                <input type='password' name='senha' id='senha' size='10' maxlength='15'> <br>
+            <div class='areaCliente'>
+                <h1 class="title">Área de clientes</h1>
+                <img class="formlogo" src="assets/logo/contimatic.png" alt="Contimatic Phoenix">
+            </div>
+            <div class="forminput-title">
+                <label class="formTitle">CNPJ</label>
+                <input class="formInput" type='text' name='documento' id='contmatic_documento' maxlength="18" placeholder="Digite seu CNPJ"> 
+                <label class="formTitle">Usuário:</label>
+                <input class="formInput" type='text' name='login' id='login' size='10' maxlength='91' placeholder="Digte seu Usuário"> 
+                <label class="formTitle">Senha:</label>
+                <input class="formInput" type='password' name='senha' id='senha' size='10' maxlength='15'> 
+            </div>
+            <div class="bottomform">
+
                 <input type='submit' value='Acessar' class='btn_acessar'>
                 <input type='hidden' name='contadorId' id='contadorId' value='23478'>
                 <br>
-                <a href='https://app.contadoronline.contmatic.com.br/painel/esqueci'>Esqueci minha senha</a>
+                <a class="formSenha"href='https://app.contadoronline.contmatic.com.br/painel/esqueci'>Esqueci minha senha</a>
+            </div>
          </form>
         
     </section>
+    <footer class = footer-container>
+        <div class="footerRight">
+            <img  class="logofooter" src="assets/logo/LPS_PRIME_LOGO_BRANCO.svg" alt=""> <br>
+            <span class="direitos">© LPS Prime tem todos os <br> Direitos Reservados.</span>
+        </div>
+        <div class="footerCenter">
+            <a href="#" >Serviços</a> <br>
+            <a href="#" >Certificado Digital</a> <br>
+            <a href="#" >Escritório Virtual</a> <br>
+            <a href="#" >Consultoria</a> <br>
+        </div>
+        <div class="footerLeft">
+            <span>Fale Conosco</span> <br>
+            <a href="#">luciano@lpsprime.com.br</a>  <br>
+            <a href="#">(11) 2628-8020</a> <br>
+            <a href="#">(11) 97554-0670 (WhatsApp)</a> <br>
+            <a href="#">R. Filhas do Sagrado Coração, 51 - Sala 14 <br> Vila Formosa, São Paulo - SP, 03364-000</a>
+        </div>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
             const menuToggle=document.querySelector('.menu-toggle');
@@ -69,6 +100,16 @@
             };
             moveRightHeader();
             window.addEventListener('resize', moveRightHeader);
+        });
+
+        document.getElementById('contmatic_documento').addEventListener('input',function(e){
+            let value=e.target.value;
+            value=value.replace(/\D/g, '');
+            value=value.replace(/^(\d{2})(\d)/, '$1.$2');
+            value=value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+            value=value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+            value=value.replace(/(\d{4})(\d)/, '$1-$2');
+            e.target.value = value;
         });
     </script>
 </body>

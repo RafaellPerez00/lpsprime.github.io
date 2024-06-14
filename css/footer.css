@@ -1,0 +1,83 @@
+.footer-container{
+    --firstcolor:#307E1A;
+    --secondcolor:#00120b;
+    --thirdcolor:#6B818C;
+    --fourthcolor:#D8E4FF;
+    --fifthcolor:#31E981;
+    padding: 2% 13%;
+    background-color:var(--firstcolor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.footerRight{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footerCenter{
+    display: flex;
+    flex-direction: column;
+}
+
+.logofooter{
+    width: 200px;
+}
+
+.footerLeft{
+    display: flex;
+    flex-direction: column;
+}
+
+.direitos{
+    font-weight: 300;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px){
+    .footer-container{
+        padding-top: 10%;
+        padding-bottom: 10%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 400;
+    }
+    span{
+        font-weight: 900;
+        padding-bottom: 5%;
+    }
+
+    .logofooter{
+        display: flex;
+        align-items: center;
+        width: 100px;
+    }
+    .footerLeft{
+        margin-top: 15%;
+    }
+
+    .footerRight{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10%;
+    }
+
+
+}
