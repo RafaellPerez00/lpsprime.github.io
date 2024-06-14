@@ -1,0 +1,108 @@
+.header-container{
+    padding: 0.5% 13%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    --firstcolor:#307E1A;
+    position: relative;
+}
+.logoheader{
+    align-self: center;
+    width: 100%;
+}
+.centralheader{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.option{
+    margin: 0 2%;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+    color:var(--firstcolor);
+    white-space: nowrap;
+}
+
+.rightheader{
+    display: flex;
+    align-items: center;
+}
+
+.secondoption{
+    text-align: center;
+    margin-left: 30px;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+    color:var(--firstcolor);
+    white-space: nowrap;
+}
+
+.menu-toggle{
+    color: var(--firstcolor);
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*REPONSIVIDADE*/
+
+@media (max-width: 768px){
+    .centralheader, .rightheader{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+        
+        z-index: 10;
+    }
+    .logoheader{
+        align-self: center;
+        width: 70%;
+    }
+    .option{
+        margin: 10px 0;
+        padding: 10px 15px;
+    }
+    .secondoption{
+        margin: 0;
+        padding: 10px 15px;
+    }
+    .menu-toggle{
+        display: block;
+    }
+
+    .header-container{
+        padding-top: 5%;
+    }
+    
+    .header-container.active .centralheader {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .header-container.active .centralheader .rightheader {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
+    }
+}
