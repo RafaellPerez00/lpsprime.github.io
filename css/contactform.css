@@ -112,6 +112,7 @@
     font-weight: 600;
     line-height: normal;
     color:var(--thirdcolor);
+    margin-right: 20px;
 }
 
 .contactlinks{
@@ -145,7 +146,9 @@
     display: flex;
     justify-content: center;
 }
-
+.whatsapp-container{
+    display: flex;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px){

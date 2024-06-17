@@ -83,6 +83,8 @@ a{
         align-items: center;
         margin-bottom: 10%;
     }
-
+    .phonecontainer{
+     justify-content: center;
+    }
 
 }
