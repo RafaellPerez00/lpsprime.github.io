@@ -9,6 +9,10 @@
     margin-bottom: 5%;
 }
 
+.form-container .universal-button{
+    padding: 6% 0;
+}
+
 .areaCliente{
     display: flex;
     justify-content: center;
@@ -19,6 +23,7 @@
 }
 
 .title{
+    margin: 5% 0;
     font-family: Roboto;
     font-size: 60px;
     font-style: normal;
@@ -113,6 +118,10 @@
 /*REPONSIVIDADE*/
 
 @media (max-width: 768px){
+    .contact-section{
+        padding: 3% 5%;
+    }
+
     .form-container{
         padding-bottom: 10%;
     }

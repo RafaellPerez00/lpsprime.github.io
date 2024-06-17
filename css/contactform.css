@@ -1,0 +1,180 @@
+
+.contatsection{
+    --firstcolor:#307E1A;
+    --secondcolor:#00120b;
+    --thirdcolor:#6B818C;
+    --fourthcolor:#D8E4FF;
+    --fifthcolor:#31E981;
+    padding: 3% 13%;
+    
+}
+.form-contact{
+    border-radius: 20px;
+    padding: 3% 3%;
+    background: var(--fourthcolor); 
+    box-shadow: 4px 4px 7px 0px #8093be; 
+}
+
+.conctactform-title{
+    justify-content: center;
+    color: var(--thirdcolor);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    margin-bottom: 5%;
+}
+.form-input{
+    width: 450px;
+    height: 50px;
+    border-radius: 15px;
+    border: 4px solid var(--fifthcolor);
+    background:#F3F3F3;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10) inset;
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.10));
+    margin-top: 7%;
+    margin-bottom: 7%;
+    font-style: Roboto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3.00px;
+    padding-left: 2%;
+}
+
+.form-input::placeholder{
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.form-input.-textarea{
+    height: 150px;
+}
+
+.title-inputform{
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color:var(--thirdcolor)
+}
+
+
+.contacttext{
+    margin: 0;
+    text-align:justify;
+    box-sizing: border-box;
+    width: 90%;
+    font-family: Roboto;
+    font-size:36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color:var(--secondcolor);
+}
+
+.redirectabout{
+    color:var(--firstcolor);
+    font-weight: 900;
+}
+
+.phone-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 10% 10% 10% 0;
+}
+.phone-container .contacttitle{
+    margin-bottom: 5%;
+}
+
+.contactemail{
+    margin-bottom: 10%;
+}
+.contactemail .contacttitle{
+    margin-bottom: 1%;
+}
+
+.contactaddress .contacttitle{
+    margin-bottom: 1%;
+}
+
+.contacttitle{
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color:var(--thirdcolor);
+}
+
+.contactlinks{
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--secondcolor);
+}
+
+.contact-container{
+    display: flex;
+}
+
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-title-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .contact-container{
+        flex-direction: column;
+        margin-top: 5%;
+    }
+    .contacttext{
+        font-size: 20px;
+        width: 100%;
+    }
+    .contacttitle{
+        font-size: 16px;
+    }
+    .contactlinks{
+        font-size: 16px;
+    }
+    .form-input{
+        width:90%
+    }
+    .contact-description{
+        margin-bottom: 10%;
+    }
+    .contatsection{
+        padding: 10% 5% 10%;
+    }
+
+    .form-contact{
+        padding: 10% 5%;
+    }
+
+}
