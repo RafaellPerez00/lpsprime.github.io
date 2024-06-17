@@ -16,6 +16,7 @@
     line-height: normal;
     letter-spacing: 1px;
     color: white;
+    box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, 0.10);
 }
 
 a{
@@ -45,6 +46,10 @@ a{
 
 .direitos{
     font-weight: 300;
+}
+.phonecontainer{
+    display: inline-flex;
+    margin-bottom: 10%;
 }
 
 /*RESPONSIVIDADE*/

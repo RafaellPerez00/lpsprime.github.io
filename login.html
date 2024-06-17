@@ -9,26 +9,29 @@
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/animated/ani_login.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <header class="header-container">
+    <header class="header-container animate__animated animate__slideInDown">
         <a href="" >
             <img class="logoheader" src="assets/logo/LPS_PRIME_LOGO_1.svg" alt="Logo LPS Prime">
         </a>
         <nav class="centralheader">
-            <a href="#" class="option">Serviços</a>
-            <a href="#" class="option">Certificado Digital</a>
-            <a href="#" class="option">Escritório Virtual</a>
-            <a href="#" class="option">Consultoria</a>
+            <a href="serviços.html" class="option">Serviços</a>
+            <a href="certificado.html" class="option">Certificado Digital</a>
+            <a href="escritóriov.html" class="option">Escritório Virtual</a>
+            <a href="consultoria.html" class="option">Consultoria</a>
             </nav>
             <div class="rightheader">
-                <a href="#" class="secondoption">Fale <br> Conosco</a>
-                <a href="#" class="secondoption">Login</a>
+                <a href="contato.html" class="secondoption">Fale <br> Conosco</a>
+                <a href="login.html" class="secondoption">Login</a>
             </div> 
         <button class="menu-toggle" aria-label="Open Menu">
             &#9776;
@@ -37,18 +40,23 @@
     <section class="form-container">
         <form name='form1' class='formlogin' id='form1' action='https://app.contadoronline.contmatic.com.br/efetualoginnovo' method='post'>
             <div class='areaCliente'>
-                <h1 class="title">Área de clientes</h1>
-                <img class="formlogo" src="assets/logo/contimatic.png" alt="Contimatic Phoenix">
+                <h1 class="title animate__animated animate__fadeInLeft">Área de clientes</h1>
+                <img class="formlogo animate__animated animate__fadeInRight" src="assets/logo/contimatic.png" alt="Contimatic Phoenix">
             </div>
-            <div class="forminput-title">
+            <div class="forminput-title animate__animated animate__fadeInLeft">
                 <label class="formTitle">CNPJ</label>
                 <input class="formInput" type='text' name='documento' id='contmatic_documento' maxlength="18" placeholder="CNPJ da sua empresa"> 
                 <label class="formTitle">Usuário:</label>
                 <input class="formInput" type='text' name='login' id='login' size='10' maxlength='91' placeholder="Seu Login"> 
-                <label class="formTitle">Senha:</label>
-                <input class="formInput" type='password' name='senha' id='senha' size='10' maxlength='15' placeholder="Sua senha"> 
+                <label class="formTitle" for="senha">Senha:</label>
+                <div class="password-container">
+                    <input class="formInput" type='password' name='senha' id='senha' size='10' maxlength='15' placeholder="Sua senha"> 
+                    <button type="button" id="togglePassword" aria-label="Mostrar senha">
+                        <i id="toggleIcon" class="fa fa-eye"></i>
+                    </button>
+                </div>
             </div>
-            <div class="bottomform">
+            <div class="bottomform animate__animated animate__fadeInLeft">
 
                 <input type='submit' value='Acessar' class='universal-button'>
                 <input type='hidden' name='contadorId' id='contadorId' value='23478'>
@@ -58,23 +66,26 @@
          </form>
         
     </section>
-    <footer class = footer-container>
+    <footer class = "footer-container animate__animated animate__slideInUp" >
         <div class="footerRight">
             <img  class="logofooter" src="assets/logo/LPS_PRIME_LOGO_BRANCO.svg" alt=""> <br>
             <span class="direitos">© LPS Prime tem todos os <br> Direitos Reservados.</span>
         </div>
         <div class="footerCenter">
-            <a href="#" >Serviços</a> <br>
-            <a href="#" >Certificado Digital</a> <br>
-            <a href="#" >Escritório Virtual</a> <br>
-            <a href="#" >Consultoria</a> <br>
+            <a href="serviços.html" >Serviços</a> <br>
+            <a href="certificado.html" >Certificado Digital</a> <br>
+            <a href="escritóriov.html" >Escritório Virtual</a> <br>
+            <a href="consultoria.html" >Consultoria</a> <br>
         </div>
         <div class="footerLeft">
             <span>Fale Conosco</span> <br>
-            <a href="#">luciano@lpsprime.com.br</a>  <br>
-            <a href="#">(11) 2628-8020</a> <br>
-            <a href="#">(11) 97554-0670 (WhatsApp)</a> <br>
-            <a href="#">R. Filhas do Sagrado Coração, 51 - Sala 14 <br> Vila Formosa, São Paulo - SP, 03364-000</a>
+            <a href="mailto:luciano@lpsprime.com.br">luciano@lpsprime.com.br</a>  <br>
+            <a href="tel:+551126288020">(11) 2628-8020</a> <br>
+            <div class="phonecontainer">
+                <a href="tel:+5511975540670">(11) 97554-0670 <a href="https://wa.me/11975540670" target="_blank"><u> (WhatsApp)</u></a></a> <br>
+            </div>
+            
+            <a href="https://www.google.com/maps/dir/-23.7764608,-46.6976768/R.+Filhas+do+Sagrado+Cora%C3%A7%C3%A3o,+51+-+Vila+Formosa,+S%C3%A3o+Paulo+-+SP,+03364-000/@-23.6553064,-46.7152137,12z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x94ce5dc3929ec0a7:0x14945e679de5d0ce!2m2!1d-46.5397386!2d-23.5664718!3e3?entry=ttu" target="_blank">R. Filhas do Sagrado Coração, 51 - Sala 14 <br> Vila Formosa, São Paulo - SP, 03364-000</a>
         </div>
     </footer>
     <script>
@@ -112,6 +123,15 @@
             value=value.replace(/(\d{4})(\d)/, '$1-$2');
             e.target.value = value;
         });
+
+        document.getElementById('togglePassword').addEventListener('click',function(){
+            const passwordField = document.getElementById('senha');
+            const toggleIcon = document.getElementById('toggleIcon');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            toggleIcon.classList.toggle('fa-eye');
+            toggleIcon.classList.toggle('fa-eye-slash');
+        })
     </script>
 </body>
 </html>

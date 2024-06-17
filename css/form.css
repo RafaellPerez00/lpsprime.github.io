@@ -59,6 +59,7 @@
     line-height: normal;
     letter-spacing: 3.00px;
     padding-left: 2%;
+    width: 100%;
 }
 
 .formTitle{
@@ -115,6 +116,25 @@
 
 }
 
+.password-container{
+    position:relative;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword{
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    outline:none;
+}
+
+#togglePassword i {
+    font-size: 16px;
+}
+
 /*REPONSIVIDADE*/
 
 @media (max-width: 768px){
@@ -132,3 +152,7 @@
         width: 0;
     }
 }
+
+
+
+

@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/contactform.css">
-    <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/animated/ani_cont.css">
+    <link rel="stylesheet" href="css/jequitiba.css">
+    <link rel="stylesheet" href="css/animated/ani_serv.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body>
+<body style="background-color: #307E1A;">
     <header class="header-container animate__animated animate__slideInDown">
         <a href="" >
             <img class="logoheader" src="assets/logo/LPS_PRIME_LOGO_1.svg" alt="Logo LPS Prime">
@@ -36,72 +35,11 @@
             &#9776;
         </button>
     </header>
-    <section class="contatsection">
-        <div class="contact-container ">
-            <div class="contact-description animate__animated animate__fadeInLeft">
-                <p class="contacttext">Na <a class="redirectabout" href="#">LPS Prime</a>, priorizamos a excelência no atendimento e a agilidade nos serviços contábeis e de consultoria. Entre em contato e descubra como podemos ajudar seu negócio a tomar decisões rápidas e seguras.</p>
-                <div class="phone-container">
-                    <div>
-                        <h2 class="contacttitle">Telefone Comercial</h2>
-                        <a class="contactlinks" href="">(11) 2628-8020</a>
-                    </div>
-                    <div>
-                        <h2 class="contacttitle">Celular Whatsapp</h2>
-                        <a class="contactlinks" href="">(11) 97554-0670</a>
-                     </div>
-                </div>
-                <div class="contactemail">
-                    <h2 class="contacttitle">E-Mail</h2>
-                    <a class="contactlinks" href="">luciano@lpsprime.com.br</a>
-                </div>
-                <div class="contactaddress">
-                    <h2 class="contacttitle">Endereço</h2>
-                    <a class="contactlinks" href="">R. Filhas do Sagrado Coração, 51 - Sala 14 <br>
-                        Vila Formosa, São Paulo - SP, 03364-000
-                        </a>
-
-                </div>
-            </div>
-            
-            <form action="https://formsubmit.co/fiscal@lpsprime.com.br" method="POST" class="form-contact animate__animated animate__fadeInRight">
-                <h1 class="conctactform-title">Converse conosco!</h1>
-                <div class="form-container">
-                    <div class="input-title-container">
-                        <div class="form-example">
-                            <label for="name" class="title-inputform">Nome </label>
-                            <input id="name" type="text" name="name" placeholder="Digite seu nome" class="form-input" required />
-                        </div>
-                        <div class="form-example">
-                            <label for="telephone" class="title-inputform">Telefone </label>
-                            <input id="telephone" type="text" name="name" placeholder="Digite seu Telefone" class="form-input" required />
-                        </div>
-                        <div class="form-example">
-                            <label for="email" class="title-inputform">Email </label>
-                            <input id="email" type="email" name="email" placeholder="Digite seu email" class="form-input" required />
-                        </div>
-                        <div class="form-example">
-                            <label for="message" class="title-inputform">Mensagem </label>
-                            <textarea name="" id="message" cols="40" rows="10" placeholder="Digite sua mensagem" class="form-input -textarea" required></textarea>
-                        </div>
-                    </div>
-                    <div class="button-container">
-                        <button class="universal-button" type="submit" >Enviar</button>
-
-                    </div>
-
-
-                </div>
-
-
-                <input type="hidden" name="_subject" value="Novo Contato via WebSite!">
-                <input type="text" name="_honey" style="display: none;">
-                <input type="hidden" name="_captcha" value ="false">
-                <input type="hidden" name="_next" value="thankyou.html">
-                <input type="hidden" name="_cc" value=" fiscal@lpsprime.com.br">
-              </form>
-        
-        </div>
+    <section class="jequitiba animate__animated animate__slideInUp">
+        <div id ="svg-container"></div>
     </section>
+
+
     <footer class = "footer-container animate__animated animate__slideInUp">
         <div class="footerRight">
             <img  class="logofooter" src="assets/logo/LPS_PRIME_LOGO_BRANCO.svg" alt=""> <br>
@@ -149,7 +87,50 @@
             moveRightHeader();
             window.addEventListener('resize', moveRightHeader);
         });
+        fetch('assets/logo/jequitiba.svg')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(data, 'image/svg+xml');
+                const svgElement = svgDoc.querySelector('svg');
+                if (!svgElement) {
+                    throw new Error('No SVG element found');
+                }
 
+                // Criar máscara SVG
+                const mask = document.createElementNS('http://www.w3.org/2000/svg', 'mask');
+                mask.setAttribute('id', 'mask');
+
+                // Criar retângulo animado para a máscara
+                const maskRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                maskRect.setAttribute('x', '0');
+                maskRect.setAttribute('y', '0');
+                maskRect.setAttribute('width', '100%');
+                maskRect.setAttribute('height', '100%');
+                maskRect.setAttribute('fill', 'white');
+                maskRect.setAttribute('y', '100%'); // Começa fora da visão
+                maskRect.setAttribute('transform-origin', 'bottom');
+                
+                // Adicionar retângulo animado à máscara
+                mask.appendChild(maskRect);
+                
+                // Adicionar máscara ao SVG
+                svgElement.appendChild(mask);
+                
+                // Adicionar SVG ao contêiner
+                document.getElementById('svg-container').appendChild(svgElement);
+            })
+            .catch(error => {
+                console.error('Error fetching or processing SVG:', error);
+            });
+                
+
+        
     </script>
 </body>
 </html>

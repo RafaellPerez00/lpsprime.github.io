@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
     --firstcolor:#307E1A;
     position: relative;
